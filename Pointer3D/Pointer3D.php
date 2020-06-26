@@ -1,5 +1,5 @@
 <?php
-    include_once('Pointer2D.php');
+    // include_once('Pointer2D.php');
     class Pointer3D extends Pointer2D{
         private $z;
         public function __construct($x, $y, $z)
@@ -19,8 +19,8 @@
             $this->setZ($z);
         }
         public function getXYZ(){
-            $arr = [];
-            array_push($arr, parent::getX(), parent::getY(), $this->getZ());
+            $arr = parent::getXY();
+            array_push($arr, $this->getZ());
             return $arr;
         }
         public function __toString()
